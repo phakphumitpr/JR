@@ -18,6 +18,9 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -130,25 +133,55 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
-       <!-- 404 Error Text -->
-      <div class="text-center">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">ตารางพัสดุส่วนกลาง <a type="button" class="btn btn-outline-primary" href="<?php echo site_url('...');?>">...</a></h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr role="row" class="info" bgcolor="#76D7C4">
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>รหัส</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อ</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันที่</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:30%;"><h6>รายละเอียด</h6></th>
+                      
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>
+                      
+                    </tr>
+                  </thead>
+                    <tbody>
+                    <?php foreach ($list_daykeywat as $fab) { ?>
+                   <tr role="row">
+                       <td align="center"> <?php echo $fab->dkw_id;?></td>
+                       <td>
+                            <?php echo $fab->dkw_name;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_date;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_detail;?>
+                        </td>
 
-      <div class="error mx-auto" data-text="404">404</div>
-      <p class="lead text-gray-800 mb-5">.....</p>
-      <p class="lead text-gray-800 mb-5">.....</p>
-    </div>
+                            <td>
+                                <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-warning"> <i>แก้ไข</i></a>
+                          </td>
+                          <td>
+                              <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-danger" > <i>ลบ</i></a>
+                          </td>
+                   </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      
 
   </div>
   <!-- /.container-fluid -->
@@ -172,9 +205,8 @@
   </a>
 
   
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -189,6 +221,13 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/datatables-demo.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 </body>
 

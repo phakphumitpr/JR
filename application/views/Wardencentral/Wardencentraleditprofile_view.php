@@ -80,7 +80,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('...');?>">
+        <a class="nav-link" href="<?php echo site_url('Wardencentral/Wardencentralmgpro');?>">
             <i class="fas fa-fw fa-table"></i>
             <span>คลังพัสดุส่วนกลาง</span></a>
         </li>

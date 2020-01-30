@@ -34,4 +34,9 @@ class Wardencentral extends CI_Controller {
             $this->Wardencentral_model->Wardencentraleditprofile();
             redirect('Wardencentral/Wardencentraleditprofile','refresh');
 	}
+
+	public function Wardencentralmgpro()
+	{
+		$this->load->view('Wardencentral/Wardencentralmgpro_view');
+	}
 }
