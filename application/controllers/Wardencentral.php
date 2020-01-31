@@ -37,6 +37,36 @@ class Wardencentral extends CI_Controller {
 
 	public function Wardencentralmgpro()
 	{
-		$this->load->view('Wardencentral/Wardencentralmgpro_view');
+		$data['list_product']=$this->Wardencentral_model->list_product();
+		$this->load->view('Wardencentral/Wardencentralmgpro_view',$data);
 	}
+
+	public function Wardencentraladdpro()
+	{
+		$data['list_typepro']=$this->Wardencentral_model->list_typepro();
+		$this->load->view('Wardencentral/Wardencentraladdpro_view',$data);
+	}
+
+	public function CheckWardencentraladdpro()
+	{
+		$this->Wardencentral_model->CheckWardencentraladdpro();
+            
+        redirect('Wardencentral/Wardencentralmgpro','refresh');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 }
