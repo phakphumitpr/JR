@@ -175,7 +175,7 @@
                 <thead>
                     <tr align="center" role="row" class="info" bgcolor="#76D7C4">
                       <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อพระ</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ปั/เดือน/วัน</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>วัน/เดือน/ปี</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:25%;"><h6>สถานะ</h6></th>
                       
                       
@@ -256,7 +256,7 @@
               <tr>
               <tr role="row" align="center" class="info" bgcolor="#76D7C4" >
                           
-                            <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">ปีเดือนวัน</th>
+                            <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">วัน/เดือน/ปี</th>
                             <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">จำนวน</th>
                           
 

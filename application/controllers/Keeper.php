@@ -135,6 +135,7 @@ class Keeper extends CI_Controller {
 		$data['list_monkcheck']=$this->Keeper_model->list_monkcheck();
 		$data['list_jubjub']=$this->Keeper_model->list_jubjub();
 		$this->load->view('Keeper/Keepercheckmonk_view',$data);
+		
 	}
 
 	public function Keepermgbooking()

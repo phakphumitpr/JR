@@ -176,9 +176,12 @@
                       <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อ</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันที่</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:30%;"><h6>รายละเอียด</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>จำนวนพระที่รับกิจนิมนต์</h6></th>
+                      
                       
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>
+                      
                       
                     </tr>
                   </thead>
@@ -196,6 +199,12 @@
                             <?php echo $fab->dkw_detail;?>
                         </td>
 
+                        <td>
+                            <?php echo $fab->mc_id;?>
+                        </td>
+
+                        
+
                             <td>
                                 <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
                                 class="btn btn-warning"> <i>แก้ไข</i></a>
@@ -207,6 +216,7 @@
                    </tr>
                     <?php } ?>
                   </tbody>
+                  
                 </table>
               </div>
             </div>
