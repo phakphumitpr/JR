@@ -22,6 +22,7 @@ class Keeper_model extends CI_Model{
         
         $query = $this->db->get('tb_daykeywat');
         return $query->result();
+        
     }
 
     public function CheckKeeperadddaykeywat1() // ตรวจการเพิ่มข้อมูลซ้ำ เช็คจาก name

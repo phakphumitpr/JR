@@ -200,11 +200,11 @@
                         </td>
 
                         <td>
-                            <?php echo $fab->mc_id;?>
+                          <?php echo $fab->mc_id;?></td>
                         </td>
-
                         
-
+                        
+                        
                             <td>
                                 <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
                                 class="btn btn-warning"> <i>แก้ไข</i></a>
@@ -216,6 +216,7 @@
                    </tr>
                     <?php } ?>
                   </tbody>
+                  <tbody>
                   
                 </table>
               </div>
