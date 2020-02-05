@@ -7,10 +7,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '45.77.254.49',
-	'username' => 'admin_monk',
-	'password' => 'monk1234',
-	'database' => 'admin_monk',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'jr',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

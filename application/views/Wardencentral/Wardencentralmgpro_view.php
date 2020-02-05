@@ -135,52 +135,45 @@
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-0 font-weight-bold text-primary">ตารางพัสดุส่วนกลาง <a type="button" class="btn btn-outline-primary" href="<?php echo site_url('Wardencentral/Wardencentraladdpro');?>">เพิ่มรายการพัสดุ</a></h4>
+              <h4 class="m-0 font-weight-bold text-primary">ตารางพัสดุส่วนกลาง <a type="button" class="btn btn-outline-primary" href="<?php echo site_url('...');?>">...</a></h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr align="center" role="row" class="info" bgcolor="#76D7C4">
+                    <tr role="row" class="info" bgcolor="#76D7C4">
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>รหัส</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อ</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันที่</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:30%;"><h6>รายละเอียด</h6></th>
                       
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ประเภท</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อพัสดุ</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>จำนวน</h6></th>
-                      
-                      <!-- <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th> -->
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>
                       
                     </tr>
                   </thead>
                     <tbody>
-                    <?php foreach ($list_product as $fab) { ?>
-                   <tr align="center" role="row">
-                       <!-- <td align="center"> <?php echo $fab->dkw_id;?></td> -->
-                       <?php
-                          $this->db->where('typepro_id',$fab->typepro_id);
-                          $query = $this->db->get('tb_typepro');
-                          $dow = $query->row_array();
-                        ?>  
+                    <?php foreach ($list_daykeywat as $fab) { ?>
+                   <tr role="row">
+                       <td align="center"> <?php echo $fab->dkw_id;?></td>
                        <td>
-                            <?php echo $dow['typepro_name'];?>
+                            <?php echo $fab->dkw_name;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_date;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_detail;?>
                         </td>
 
-                       <td>
-                            <?php echo $fab->p_name;?>
-                        </td>
-                       <td>
-                            <?php echo $fab->p_amount;?>
-                        </td>
-                      
-
-                            <!-- <td>
+                            <td>
                                 <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
                                 class="btn btn-warning"> <i>แก้ไข</i></a>
                           </td>
                           <td>
                               <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
                                 class="btn btn-danger" > <i>ลบ</i></a>
-                          </td> -->
+                          </td>
                    </tr>
                     <?php } ?>
                   </tbody>
