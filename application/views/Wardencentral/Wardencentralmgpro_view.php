@@ -1,3 +1,4 @@
+@@ -0,0 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,17 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
-  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!--input -->
+    <!-- Icons font CSS-->
+    <link href="<?php echo base_url();?>./Sathu/input/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url();?>./Sathu/input/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="<?php echo base_url();?>./Sathu/input/css/main.css" rel="stylesheet" media="all">  <!--input -->
 
 </head>
 
@@ -132,60 +142,64 @@
 
   <!-- Begin Page Content -->
   <div class="container-fluid">
-
-        <div class="card shadow mb-4">
+  <br>
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-0 font-weight-bold text-primary">ตารางพัสดุส่วนกลาง <a type="button" class="btn btn-outline-primary" href="<?php echo site_url('...');?>">...</a></h4>
+              <h4 class="m-0 font-weight-bold text-primary">เพิ่มรายการพัสดุ</h4>
             </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr role="row" class="info" bgcolor="#76D7C4">
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>รหัส</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อ</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันที่</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:30%;"><h6>รายละเอียด</h6></th>
-                      
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>
-                      
-                    </tr>
-                  </thead>
-                    <tbody>
-                    <?php foreach ($list_daykeywat as $fab) { ?>
-                   <tr role="row">
-                       <td align="center"> <?php echo $fab->dkw_id;?></td>
-                       <td>
-                            <?php echo $fab->dkw_name;?>
-                        </td>
-                       <td>
-                            <?php echo $fab->dkw_date;?>
-                        </td>
-                       <td>
-                            <?php echo $fab->dkw_detail;?>
-                        </td>
-
-                            <td>
-                                <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
-                                class="btn btn-warning"> <i>แก้ไข</i></a>
-                          </td>
-                          <td>
-                              <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
-                                class="btn btn-danger" > <i>ลบ</i></a>
-                          </td>
-                   </tr>
-                    <?php } ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-      
-
   </div>
   <!-- /.container-fluid -->
 
+  <div class="card-body">
+                    <form action="<?php echo site_url('Wardencentral/CheckWardencentraladdpro'); ?>" method="POST">
+                      
+                    <div class="form-row">
+                            <div class="name">ประเภท</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                    <select class="form-control" name="typepro_id" >
+                                    <option value =''>กรุณาเลือก</option>
+                                            <?php foreach ($list_typepro as $fab) { ?>
+                                              
+                                                <option required value="<?php echo $fab->typepro_id;?>"><?php echo $fab->typepro_name;?> </option>
+                                           <?php } ?>
+
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                        <div class="form-row">
+                            <div class="name">ชื่อ</div>
+                            <div class="value">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="p_name" style="width:600px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">จำนวน</div>
+                            <div class="value">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="p_amount" style="width:300px;">
+                                </div>
+                            </div>
+                        </div>
+                        
+        
+                    
+                        <div>
+                            <button class="btn btn--radius-2 btn-primary" type="submit">ยืนยัน</button>
+                        </div>
+                    </form>
+                </div>
 
 
 </div>
@@ -204,9 +218,8 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  
-<!-- Bootstrap core JavaScript-->
-<script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -222,12 +235,18 @@
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/datatables-demo.js"></script>
+    <!--input -->
+    <!-- Jquery JS-->
+    <script src="<?php echo base_url();?>./Sathu/input/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.js"></script>
+    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/moment.min.js"></script>
+    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/daterangepicker.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Main JS-->
+    <script src="<?php echo base_url();?>./Sathu/input/js/global.js"></script> <!--input -->
+
+  
 
 </body>
 
