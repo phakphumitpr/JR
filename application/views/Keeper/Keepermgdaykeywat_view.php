@@ -174,7 +174,7 @@
                     <tr role="row" class="info" bgcolor="#76D7C4">
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>รหัส</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อ</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันที่</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>วันเดือนปี</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:30%;"><h6>รายละเอียด</h6></th>
                       
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>

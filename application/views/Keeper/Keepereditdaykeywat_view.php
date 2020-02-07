@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">วันที่</div>
+                            <div class="name">วันเดือนปี</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="form-control" type="text" name="dkw_date"
