@@ -16,6 +16,20 @@ class Keeper_model extends CI_Model{
         return FALSE;
     }
 
+    public function readbk($bk_id) 
+        {
+        $this->db->select('*');
+        $this->db->from('tb_booking');
+        $this->db->where('bk_id',$bk_id);
+        $query = $this->db->get();
+        if($query->num_rows()>0)
+        {
+            $data = $query->row();
+            return $data;
+        }
+        return FALSE;
+    }
+
 
     public function list_daykeywat()
     {
@@ -258,5 +272,11 @@ class Keeper_model extends CI_Model{
         return $query->result();
     }
     
+
+    public function list_statusjong()
+    {
+        $query = $this->db->get('tb_statusjong');
+        return $query->result();
+    }
 
 } //ปีกสุดท้าย

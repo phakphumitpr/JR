@@ -237,7 +237,7 @@
                         </td>
 
                             <td>
-                                <a href="#" 
+                                <a href="<?php echo site_url('Keeper/Keeperjkbooking/'.$fab->bk_id);?>" 
                                 class="btn btn-warning"> <i>จัดการ</i></a>
                           </td>
                           <!-- <td>
