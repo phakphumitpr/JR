@@ -144,7 +144,7 @@
   <!-- /.container-fluid -->
 
   <div class="card-body">
-                    <form action="<?php echo site_url('Jom/Jomaddbooking1'); ?>" method="POST">
+                    <form action="<?php echo site_url('Jom/Jomaddbooking1/'); ?>" method="POST">
 
                     <div class="form-row">
                             <div class="name">ประเภทงาน</div>

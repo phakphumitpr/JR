@@ -1,7 +1,9 @@
 <?php
 class Keeper_model extends CI_Model{
  
-
+public function __construct(){
+    parent::__construct();
+}
     public function read($dkw_id) 
         {
         $this->db->select('*');
@@ -279,4 +281,8 @@ class Keeper_model extends CI_Model{
         return $query->result();
     }
 
+    public function insert_booking($data)
+    {
+        $this->db->insert('tb_booking', $data);
+    }
 } //ปีกสุดท้าย

@@ -12,7 +12,7 @@ class Keeper extends CI_Controller {
 		
 		$this->load->model('Keeper_model');
         $this->load->model('Admin_model');
-      
+		$this->load->model('jom_model');
     }
 	
 	public function Keeperdash()
@@ -36,7 +36,17 @@ class Keeper extends CI_Controller {
 	}
 
 	public function Keepermgdaykeywat()
-	{
+	{		
+		// $this->db->where('dkw_id',1);
+		// $query = $this->db->get('tb_daykeywat');
+		// $data = $query->row_array();
+
+		// $this->db->where('dkw_id',$data['dkw_id']);
+		// $query2 = $this->db->get('tb_monkcheck');
+		// $data2 = $query2->row_array();
+
+		//echo $data2['mc_date'];
+
 		$data['list_daykeywat']=$this->Keeper_model->list_daykeywat();
 		$this->load->view('Keeper/Keepermgdaykeywat_view',$data);
 	}
@@ -150,29 +160,66 @@ class Keeper extends CI_Controller {
 		$this->load->view('Keeper/Keeperjkbooking_view',$data);
 	}
 
+	public function keepermanagement($idtestt)
+	{
+		if (isset($_POST['submit'])) {
+			//Pass the userid here
+			
+			$checkbox = $_POST['customCheck1']; //กูว่าบัคไลน์นี้
+		  
+			// print_r($checkbox);
+			for ($i=0;$i<count($checkbox);$i++) {
+				$sss=array(
+					'bk_id' => $idtestt,
+					'mem_id' => $checkbox[$i]
+				);
+				// $this->db->insert('tb_statusmonk',$sss);
+				
+			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
+			  $this->db->where('mem_id',$checkbox[$i]);
+	$data3 = array(
+		'statusjong_id' => '1'
+	);
+	$this->db->update('tb_member',$data3);
+		 }
 
+	$this->db->where('bk_id',$idtestt);
+	$data4 = array(
+		'sj_id' => '2'
+	);
+	$this->db->update('tb_booking',$data4);
+	}
+	
+	redirect('Keeper/Keeperdash');
+	
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -47,11 +47,41 @@ class Jom extends CI_Controller {
 	{
 		$mem_id = $_SESSION['mem_id'];
 
-		$this->Jom_model->Jomaddbooking1();	
-        redirect('Jom/Jomshowbooking','refresh');
+		$data = array(
+
+			'bk_date' => $this->input->post('bk_date'),
+			'bk_timejob' => $this->input->post('bk_timejob'),
+			'bk_time' => $this->input->post('bk_time'),       
+			'bk_location' => $this->input->post('bk_location'),  
+			'mem_id' => $this->input->post('mem_id'),  
+			'type_id' => $this->input->post('type_id'),  
+			'am_id' => $this->input->post('am_id'),  
+			'sj_id'   => $this->input->post('sj_id')
+		   
+		  
+					);
+		$idhee = $this->Jom_model->Jomaddbooking1($data);	
+
+	// 	if (isset($_POST['submit'])) {
+	// 		$user_id=$ord_id;//Pass the userid here
+			
+	// 		$checkbox = $_POST['keepercheck']; //กูว่าบัคไลน์นี้
+		  
+	// 		// print_r($checkbox);
+	// 		for ($i=0;$i<count($checkbox);$i++) {
+	// 			$sss=array(
+	// 				'bk_id' => $idhee,
+	// 				'mem_id' => $checkbox[$i]
+	// 			);
+				
+				
+	// 			$cust_id = $this->jom_model->insert_booking($sss);//Call the modal
+	// 	 }
+		
+        
+	// }
+	redirect('Jom/Jomshowbooking','refresh');
 	}
-
-
 
 	public function fetcham()
 	{
