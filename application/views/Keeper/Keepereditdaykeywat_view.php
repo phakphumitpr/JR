@@ -210,6 +210,15 @@
                             </div>
                         </div>
                         <input type="hidden" name="dkw_id"   value="<?php echo $edit->dkw_id;?>">
+                        <div class="form-row">
+                            <div class="name">จำนวนพระ</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" name="dkw_date"
+                                    value="<?php echo $edit->dkw_date;?>">
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit">ยืนยัน</button>
                         </div>

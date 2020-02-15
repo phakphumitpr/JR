@@ -181,6 +181,7 @@
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>
                       
+                      
                     </tr>
                   </thead>
                     <tbody>
@@ -221,6 +222,8 @@
                    </tr>
                     <?php }} ?>
                   </tbody>
+                  <tbody>
+                  
                 </table>
               </div>
             </div>
