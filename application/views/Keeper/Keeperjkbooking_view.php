@@ -251,7 +251,7 @@
                                     </div>
 
                                     <div class="col-2">
-                                    <select class="form-control" name="sj_id">
+                                    <select class="form-control" name="sj_id" id="sj_id" >
                                     <?php 
                           
                           $this->db->where('sj_id',$show->sj_id);
@@ -282,8 +282,7 @@
                    $query = $this->db->get();
                    $results = $query->result_array();
                    
-// $this->db->where('bk_id' , $idtestt);
-// $qq = $this->db->get('')
+
 
                    ?>
                    	<?php	foreach ($results as $result) {
@@ -291,28 +290,17 @@
                    <table class="table table-bordered" id="dataTable" width="10px"  cellspacing="0">
                 <thead>
                      <!-- <tr role="row" class="info" bgcolor="#76D7C4"> -->
-                     <th <?php $hee = $result['statusjong_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ</th>
-                     <th <?php $hee = $result['statusjong_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
+                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ</th>
+                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
                       
                   
                   </thead>
                   <!-- <tr role="row"> -->
                   <?php ?>
-                       <td <?php $hee = $result['statusjong_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['mem_name'];  ?>  </td> 
-                                <td <?php $hee = $result['statusjong_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['statusjong_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['mem_id']; ?>" ></td>       
-                                         <!-- <td>  <input type="checkbox" id="customCheck1" name="customCheck1[]" value="<?php echo $result['mem_id']; ?>" ><?php echo $result['mem_name']; ?>  </td> -->
-                                   
-                  
-                                          <!-- <td>  <input type="checkbox" id="customCheck1" name="customCheck1[]" value="<?php echo $result['mem_id']; ?>" ><?php echo $result['mem_name']; ?>  </td>
-                                           -->
-                    <!-- <div class="custom-control custom-checkbox mb-3" > -->
-                    <!-- <input type="checkbox" id="customCheck1" name="customCheck1[]" value="<?php echo $result['mem_id']; ?>" ><?php echo $result['mem_name']; ?>  -->
-                    <!-- <label class="custom-control-label" for="customCheck1"><?php echo $result['mem_id']; ?></label> -->
-                   
-                   
-                    
-                
-                    </div>                 </div>         
+                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['mem_name'];  ?>  </td> 
+                                <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['mem_id']; ?>" ></td>                  
+                    </div>               
+                      </div>         
                        <?php
                    } ?>
 

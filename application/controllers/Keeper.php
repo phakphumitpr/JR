@@ -166,7 +166,8 @@ class Keeper extends CI_Controller {
 		if (isset($_POST['submit'])) {
 			//Pass the userid here
 			
-			$checkbox = $_POST['customCheck1']; //กูว่าบัคไลน์นี้
+			$checkbox = $_POST['customCheck1']; 
+			$j = $_POST['sj_id'];
 		  
 			// print_r($checkbox);
 			for ($i=0;$i<count($checkbox);$i++) {
@@ -178,22 +179,45 @@ class Keeper extends CI_Controller {
 				
 			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
 			  $this->db->where('mem_id',$checkbox[$i]);
-	$data3 = array(
-		'statusjong_id' => '1'
-	);
-	$this->db->update('tb_member',$data3);
+		$data3 = array(
+		'sm_id' => '1'
+		);
+		$this->db->update('tb_member',$data3);
 		 }
 
-	$this->db->where('bk_id',$idtestt);
-	$data4 = array(
-		'sj_id' => '2'
-	);
-	$this->db->update('tb_booking',$data4);
-	}
+		$this->db->where('bk_id',$idtestt);
+		
+		$data4 = array(
+		'sj_id' => $j
+		);
+		$this->db->update('tb_booking',$data4);
+
+
+
+		if($j == 4){
+			$this->db->where('bk_id',$idtestt);
+			$query = $this->db->get('tb_statusmonk');
+			$data = $query->result_array();
+			foreach ($data as $pp) { 
 	
-	redirect('Keeper/Keeperdash');
+				$this->db->where('mem_id',$pp['mem_id']);
+				$pp2 = $this->db->get('tb_member');
+				$pp1 = $pp2->row_array();
+				echo $pp1['sm_id'];
+
+				$dataaa = array(
+					'sm_id' => 0
+					);
+				$this->db->where('mem_id',$pp['mem_id']);
+				$this->db->update('tb_member',$dataaa);
+				}
+		}
+
+		}
 	
-	}
+		redirect('Keeper/Keeperdash');
+	
+		}
 
 	
 	
