@@ -68,4 +68,19 @@ class Jom extends CI_Controller {
 		$this->load->view('Jom/Jomshowbooking_view',$data);
 	}
 	
+	public function Jommgjongpro()
+	{
+		$this->load->view('Jom/Jommgjongpro_view');
+	}
+
+	public function Jommgborrowpro()
+	{
+		$this->load->view('Jom/Jommgborrowpro_view');
+	}
+
+	public function Jommgreturnpro()
+	{
+		$this->load->view('Jom/Jommgreturnpro_view');
+	}
+
 }

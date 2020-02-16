@@ -11,12 +11,16 @@
 
   <title>Jom</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
+   <!-- Custom fonts for this template -->
+   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -129,25 +133,79 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
-       <!-- 404 Error Text -->
-      <!-- <div class="text-center">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+  <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">ตารางจองพัสดุ <a type="button" class="btn btn-outline-primary" href="#">แจ้งจอง</a></h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr role="row" class="info" bgcolor="#76D7C4" align="center">
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:10%;"><h6>เลขที่</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>วันที่จอง</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>วันที่ยืม</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>วันที่คืน</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:10%;"><h6>ดูเพิ่ม</h6></th>
+                     
+                      <!-- <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th> -->
+                      
+                    </tr>
+                  </thead>
+                    <!-- <tbody>
+                    <?php foreach ($list_bookingjom as $fab) { ?>
+                   <tr role="row">
+                       <td align="center">
+                            <?php echo $fab->bk_date;?>
+                        </td>
+                       <td>
+                            เวลางาน : <?php echo $fab->bk_timejob;?>
+                            <br>
+                            เวลามารับพระ : <?php echo $fab->bk_time;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->bk_location;?>
+                        </td>
+                       <td>
+                          <?php
+                          $this->db->where('type_id',$fab->type_id);
+                          $query = $this->db->get('tb_type');
+                          $data = $query->row_array();
+                          ?>
+                            ประเภทงาน : <?php echo $data['type_name'];?>
+                            <br>
+                          <?php
+                          $this->db->where('am_id',$fab->am_id);
+                          $query = $this->db->get('tb_amountmonk');
+                          $dow = $query->row_array();
+                          ?>
+                            จำนวนพระ : <?php echo $dow['am_amount'];?> รูป
+                        </td>
+                        <td align="center">
+                          <?php
+                          $this->db->where('sj_id',$fab->sj_id);
+                          $query = $this->db->get('tb_statusjong');
+                          $naruk = $query->row_array();
+                          ?>
+                            <?php echo $naruk['sj_name'];?>
+                        </td>
 
-      <div class="error mx-auto" data-text="404">404</div>
-      <p class="lead text-gray-800 mb-5">Page Not Found</p>
-      <p class="lead text-gray-800 mb-5">ไม่พบหน้านี้</p>
-    </div> -->
+                            <td>
+                                <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-warning"> <i>แก้ไข</i></a>
+                          </td>
+                          <td>
+                              <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-danger" > <i>ลบ</i></a>
+                          </td>
+                   </tr>
+                    <?php } ?>
+                  </tbody> -->
+                </table>
+              </div>
+            </div>
+          </div>
 
   </div>
   <!-- /.container-fluid -->
@@ -188,6 +246,13 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/datatables-demo.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 </body>
 

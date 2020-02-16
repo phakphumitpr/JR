@@ -236,14 +236,22 @@
                             <?php echo $naruk['sj_name'];?>
                         </td>
 
-                            <td>
+                            <!-- <td>
                                 <a href="<?php echo site_url('Keeper/Keeperjkbooking/'.$fab->bk_id);?>" 
                                 class="btn btn-warning"> <i>จัดการ</i></a>
-                          </td>
+                          </td> -->
                           <!-- <td>
                               <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
                                 class="btn btn-danger" > <i>ลบ</i></a>
                           </td> -->
+
+                          <td>
+                                 <?php if($fab->sj_id == '3'){ ?>
+                                  <a class="btn btn-danger" disabled selected><i>จัดการ</i></a>
+                                   <?php }else{ ?>
+                                    <a href="<?php echo site_url('Keeper/Keeperjkbooking/'.$fab->bk_id);?>" class="btn btn-success"> <i>จัดการ</i></a>
+                                  <?php } ?>
+                          </td>
                    </tr>
                     <?php } ?>
                   </tbody>

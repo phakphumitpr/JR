@@ -275,8 +275,11 @@ class Keeper_model extends CI_Model{
 
     public function list_statusjong()
     {
-        $query = $this->db->get('tb_statusjong');
-        return $query->result();
+        $query = $this->db->query("SELECT * FROM tb_statusjong WHERE `sj_id`!='1'");
+            return $query->result();
+
+            // $query = $this->db->get('tb_statusjong');
+            // return $query->result();
     }
 
 } //ปีกสุดท้าย

@@ -237,7 +237,7 @@
 
                                     <div class="col-2">
                                     <select class="form-control" name="sj_id">
-                                    <?php 
+                          <?php 
                           
                           $this->db->where('sj_id',$show->sj_id);
                           $query = $this->db->get('tb_statusjong');
