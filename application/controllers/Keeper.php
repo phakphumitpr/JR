@@ -157,6 +157,7 @@ class Keeper extends CI_Controller {
 	public function Keeperjkbooking($bk_id)
 	{
 		$data['show']=$this->Keeper_model->readbk($bk_id);
+		
 		$data['statusjong']=$this->Keeper_model->list_statusjong();
 		$this->load->view('Keeper/Keeperjkbooking_view',$data);
 	}

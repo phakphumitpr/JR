@@ -281,16 +281,31 @@
                    $this->db->where('level_id',5);
                    $query = $this->db->get();
                    $results = $query->result_array();
-                   
+                   ?>
+	<?php	foreach ($results as $result) {
+                       ?>
+                   <?php
 
+                   $this->db->where('mem_id',$result['mem_id']);
+                   $query1 = $this->db->get('tb_booking');
+                   $results1 = $query1->row_array();
+
+                   $this->db->where('mc_date',$results1['bk_date']);
+                   $query2 = $this->db->get('tb_monkcheck');
+                   $results2 = $query2->row_array();
+
+                  //        $this->db->select('tb_member.*');
+                  //  $this->db->from('tb_member');
+                  //  $this->db->where('bk_date','2020-02-20');
+                  //  $query = $this->db->get();
+                  //  $results = $query->result_array();
 
                    ?>
-                   	<?php	foreach ($results as $result) {
-                       ?>
+                  
                    <table class="table table-bordered" id="dataTable" width="10px"  cellspacing="0">
                 <thead>
                      <!-- <tr role="row" class="info" bgcolor="#76D7C4"> -->
-                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ</th>
+                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ <?php echo $results1['bk_date']; ?></th>
                      <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
                       
                   

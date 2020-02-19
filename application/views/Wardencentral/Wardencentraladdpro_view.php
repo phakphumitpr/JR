@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Jom</title>
+  <title>Wardencentral</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,7 +18,7 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!--input -->
+    <!--input -->
     <!-- Icons font CSS-->
     <link href="<?php echo base_url();?>./Sathu/input/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url();?>./Sathu/input/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -38,7 +38,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
@@ -54,7 +54,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Jom/Jomdash');?>">
+        <a class="nav-link" href="<?php echo site_url('Wardencentral/Wardencentraldash');?>">
           <i class="fas fa-fw fa-home"></i>
           <span>หน้าหลัก</span></a>
       </li>
@@ -67,7 +67,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Jom/Jomeditprofile');?>">
+        <a class="nav-link" href="<?php echo site_url('Wardencentral/Wardencentraleditprofile');?>">
           <i class="fas fa-fw fa-table"></i>
           <span>ข้อมูลส่วนตัว</span></a>
       </li>
@@ -75,28 +75,39 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Jom/Jomshowbooking');?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>จองนิมนต์พระ</span></a>
-      </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('Wardencentral/Wardencentralmgpro');?>">
+            <i class="fas fa-fw fa-table"></i>
+            <span>คลังพัสดุส่วนกลาง</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Charts -->
+      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('...');?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>....</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>ยืม-คืนพัสดุ</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!-- <h6 class="collapse-header"></h6> -->
+            <a class="collapse-item" href="#">ยืมพัสดุ</a>
+            <a class="collapse-item" href="#">คืนพัสดุ</a>
+            <a class="collapse-item" href="#">พัสดุที่ชำรุด</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
+
+      
 
       <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -130,30 +141,64 @@
 
   <!-- Begin Page Content -->
   <div class="container-fluid">
-
-       <!-- 404 Error Text -->
-      <!-- <div class="text-center">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <div class="error mx-auto" data-text="404">404</div>
-      <p class="lead text-gray-800 mb-5">Page Not Found</p>
-      <p class="lead text-gray-800 mb-5">ไม่พบหน้านี้</p>
-    </div> -->
-
+  <br>
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">เพิ่มรายการพัสดุ</h4>
+            </div>
   </div>
   <!-- /.container-fluid -->
 
+  <div class="card-body">
+                    <form action="<?php echo site_url('Wardencentral/CheckWardencentraladdpro'); ?>" method="POST">
+                      
+                    <div class="form-row">
+                            <div class="name">ประเภท</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                    <select class="form-control" name="typepro_id" >
+                                    <option value =''>กรุณาเลือก</option>
+                                            <?php foreach ($list_typepro as $fab) { ?>
+                                              
+                                                <option required value="<?php echo $fab->typepro_id;?>"><?php echo $fab->typepro_name;?> </option>
+                                           <?php } ?>
+
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                        <div class="form-row">
+                            <div class="name">ชื่อ</div>
+                            <div class="value">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="p_name" style="width:600px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">จำนวน</div>
+                            <div class="value">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="p_amount" style="width:300px;">
+                                </div>
+                            </div>
+                        </div>
+                        
+        
+                    
+                        <div>
+                            <button class="btn btn--radius-2 btn-primary" type="submit">ยืนยัน</button>
+                        </div>
+                    </form>
+                </div>
 
 
 </div>
@@ -172,8 +217,6 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  
-
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -191,8 +234,7 @@
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
 
-
-  <!--input -->
+    <!--input -->
     <!-- Jquery JS-->
     <script src="<?php echo base_url();?>./Sathu/input/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
@@ -202,6 +244,8 @@
 
     <!-- Main JS-->
     <script src="<?php echo base_url();?>./Sathu/input/js/global.js"></script> <!--input -->
+
+  
 
 </body>
 
