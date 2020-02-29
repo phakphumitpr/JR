@@ -31,13 +31,20 @@ class Monk_model extends CI_Model{
 
     public function Monkcheckadd() 
     {
-      
-        
+        $this->db->where('dkw_date',$this->input->post('mc_date'));
+        $query = $this->db->get('tb_daykeywat');
+        $dada = $query->row_array();
+        if($this->input->post('mc_date') == $dada['dkw_date']){
+            $qq = $dada['dkw_id'];
+        }else{
+            $qq = '0';
+        }
         
     $data = array(
 
         'mc_date' => $this->input->post('mc_date'),
-        'mem_id' => $this->input->post('mem_id'),     
+        'mem_id' => $this->input->post('mem_id'),   
+        'dkw_id' => $qq,  
         'mc_status'   => $this->input->post('mc_status')
        
       
