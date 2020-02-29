@@ -1,9 +1,7 @@
 <?php
 class Keeper_model extends CI_Model{
  
-public function __construct(){
-    parent::__construct();
-}
+
     public function read($dkw_id) 
         {
         $this->db->select('*');
@@ -38,7 +36,6 @@ public function __construct(){
         
         $query = $this->db->get('tb_daykeywat');
         return $query->result();
-        
     }
 
     public function CheckKeeperadddaykeywat1() // ตรวจการเพิ่มข้อมูลซ้ำ เช็คจาก name
@@ -285,8 +282,4 @@ public function __construct(){
             // return $query->result();
     }
 
-    public function insert_booking($data)
-    {
-        $this->db->insert('tb_booking', $data);
-    }
 } //ปีกสุดท้าย

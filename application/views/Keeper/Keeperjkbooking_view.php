@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +9,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
-  <!-- Icons -->
-  <link href="<?php echo base_url(); ?>./assets2/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>./assets2/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Argon CSS -->
-  <link type="text/css" href="<?php echo base_url(); ?>./assets2/css/argon.css?v=1.1.0" rel="stylesheet">
-
-
-
-
-        
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <title>Keeper</title>
 
   <!-- Custom fonts for this template-->
@@ -191,10 +179,7 @@
   <!-- /.container-fluid -->
 
   <div class="card-body">
-  <?php  $stringrow = base_url(uri_string());
-        $arraystate = (explode("/", $stringrow));
-        $idtestt = ($arraystate[6]);  ?>
-                    <form action="<?php echo site_url('Keeper/keepermanagement/'.$idtestt); ?>" method="post">
+                    <form action="<?php echo site_url('...'); ?>" method="POST">
                       
                     <div class="form-row m-b-55">
                             <div class="value">
@@ -251,11 +236,8 @@
                                     </div>
 
                                     <div class="col-2">
-
                                     <select class="form-control" name="sj_id">
                           <?php 
-
-
                           
                           $this->db->where('sj_id',$show->sj_id);
                           $query = $this->db->get('tb_statusjong');
@@ -269,45 +251,16 @@
                                          <?php } ?>
                                     </select>
                                     </div>
-                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn--radius-2 btn--red" name="submit" type="submit">ยืนยัน</button>
-                        </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        
-                    <?php 
-
-                    $this->db->select('tb_member.*');
-                   $this->db->from('tb_member');
-                   $this->db->where('level_id',5);
-                   $query = $this->db->get();
-                   $results = $query->result_array();
-                   
 
 
-                   ?>
-                   	<?php	foreach ($results as $result) {
-                       ?>
-                   <table class="table table-bordered" id="dataTable" width="10px"  cellspacing="0">
-                <thead>
-                     <!-- <tr role="row" class="info" bgcolor="#76D7C4"> -->
-                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ</th>
-                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
-                      
-                  
-                  </thead>
-                  <!-- <tr role="row"> -->
-                  <?php ?>
-                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['mem_name'];  ?>  </td> 
-                                <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['mem_id']; ?>" ></td>                  
-                    </div>               
-                      </div>         
-                       <?php
-                   } ?>
-
-
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">ยืนยัน</button>
+                        </div>
                     </form>
                 </div>
 
