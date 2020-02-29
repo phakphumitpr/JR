@@ -198,7 +198,44 @@
 </div>
 <!-- End of Main Content -->
 
-    
+<tbody>
+                    <?php foreach ($list_daykeywat as $fab) { ?>
+                   <tr role="row">
+                       <td align="center"> <?php echo $fab->dkw_id;?></td>
+                       <td>
+                            <?php echo $fab->dkw_name;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_date;?>
+                        </td>
+                       <td>
+                            <?php echo $fab->dkw_detail;?>
+                        </td>
+
+                        <td>
+                            <?php echo $fab->mc_id;?>
+                        </td>
+
+                        
+
+                            <td>
+                                <a href="<?php echo site_url('Keeper/Keepereditdaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-warning"> <i>แก้ไข</i></a>
+                          </td>
+                          <td>
+                              <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
+                                class="btn btn-danger" > <i>ลบ</i></a>
+                          </td>
+                   </tr>
+                    <?php } ?>
+                  </tbody>
+                  
+                </table>
+              </div>
+            </div>
+          </div>
+
+  </div>
 
     </div>
     <!-- End of Content Wrapper -->

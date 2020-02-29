@@ -64,37 +64,55 @@ class Jom_model extends CI_Model{
     }
 
 
-    public function Jomaddbooking1() 
+    public function Jomaddbooking1($data) 
     {
 
-    $data = array(
+        $this->db->insert('tb_booking',$data);
+        $id = $this->db->insert_id();
+        return (isset($id)) ? $id : FALSE;
+    }
+    public function Jomaddbooking2($data){
+        $this->db->insert('tb_statusmonk', $data);
+    }
+    // $data = array(
 
-        'bk_date' => $this->input->post('bk_date'),
-        'bk_timejob' => $this->input->post('bk_timejob'),
-        'bk_time' => $this->input->post('bk_time'),       
-        'bk_location' => $this->input->post('bk_location'),  
-        'mem_id' => $this->input->post('mem_id'),  
-        'type_id' => $this->input->post('type_id'),  
-        'am_id' => $this->input->post('am_id'),  
-        'sj_id'   => $this->input->post('sj_id')
+    //     'bk_date' => $this->input->post('bk_date'),
+    //     'bk_timejob' => $this->input->post('bk_timejob'),
+    //     'bk_time' => $this->input->post('bk_time'),       
+    //     'bk_location' => $this->input->post('bk_location'),  
+    //     'mem_id' => $this->input->post('mem_id'),  
+    //     'type_id' => $this->input->post('type_id'),  
+    //     'am_id' => $this->input->post('am_id'),  
+    //     'sj_id'   => $this->input->post('sj_id')
        
       
-                );
-                $query=$this->db->insert('tb_booking',$data);
-                if($query)
-                {
-                    echo "<script>"; 
-                    echo "alert('เพิ่มข้อมูลสำเร็จ');";
+    //             );
+    //             $query=$this->db->insert('tb_booking',$data);
+
+    //             $data2 = array(
+
+                   
+    //                 'bk_id' => $this->input->post('bk_date'),
+    //                 'mem_id' => $this->input->post('bk_timejob'),
+         
+                   
+                  
+    //                         );
+    //                         $query=$this->db->insert('tb_statusmonk',$data);
+    //             if($query)
+    //             {
+    //                 echo "<script>"; 
+    //                 echo "alert('เพิ่มข้อมูลสำเร็จ');";
                     
-                    echo "</script>";
-                }else
-                {
-                    echo "<script>";
-                    echo "alert('เพิ่มข้อมูลไม่สำเร็จ');";
+    //                 echo "</script>";
+    //             }else
+    //             {
+    //                 echo "<script>";
+    //                 echo "alert('เพิ่มข้อมูลไม่สำเร็จ');";
                     
-                    echo "</script>";
-                }
+    //                 echo "</script>";
+    //             }
                
-    }
+    // }
 
 } //ปีกสุดท้าย
