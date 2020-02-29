@@ -28,7 +28,7 @@ class Jom_model extends CI_Model{
            echo "</script>";
        }
     }
-
+// kjjjjj
     
    
     public function fetchtype()
