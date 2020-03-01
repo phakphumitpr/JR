@@ -110,10 +110,10 @@ class Keeper extends CI_Controller {
         redirect('Keeper/Keepermgmonk','refresh');
 	}
 
-	public function Keepereditmonk($mem_id)
+	public function Keepereditmonk($monk_id)
 	{
-			$this->db->where('mem_id',$mem_id);
-            $query = $this->db->get('tb_member');
+			$this->db->where('monk_id',$monk_id);
+            $query = $this->db->get('tb_monk');
             $fab = $query->row_array();
                
             if($fab['level_id'] != '5'){
@@ -121,7 +121,7 @@ class Keeper extends CI_Controller {
                 $this->load->view('Keeper/Keeper404_view'); //404ต้องสร้างใหม่นะ
                
             }else{
-            $data['edit']=$this->Admin_model->read($mem_id); //โชว์ข้อมูลสมาชิก
+            $data['edit']=$this->Admin_model->read($monk_id); //โชว์ข้อมูลสมาชิก
            
             $this->load->view('Keeper/Keepereditmonk_view',$data);
     
@@ -134,9 +134,9 @@ class Keeper extends CI_Controller {
             redirect('Keeper/Keepermgmonk','refresh');
 	}
 	
-	public function deletemonk($mem_id)
+	public function deletemonk($monk_id)
     {
-             $this->Keeper_model->deletemonk($mem_id);
+             $this->Keeper_model->deletemonk($monk_id);
 			 redirect('Keeper/Keepermgmonk','refresh');
 	}
 	

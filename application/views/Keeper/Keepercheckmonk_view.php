@@ -175,7 +175,7 @@
                 <thead>
                     <tr align="center" role="row" class="info" bgcolor="#76D7C4">
                       <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อพระ</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>วัน/เดือน/ปี</h6></th>
+                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ปั/เดือน/วัน</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:25%;"><h6>สถานะ</h6></th>
                       
                       
@@ -185,11 +185,11 @@
                     <?php foreach ($list_monkcheck as $fab) { ?>
                    <tr role="row">
                    <?php 
-                          $this->db->where('mem_id',$fab->mem_id);
-                          $query = $this->db->get('tb_member');
+                          $this->db->where('monk_id',$fab->monk_id);
+                          $query = $this->db->get('tb_monk');
                           $data = $query->row_array();
                           ?>
-                          <td align="center" ><?php echo $data['mem_name'];?></td>
+                          <td align="center" ><?php echo $data['monk_name'];?></td>
 
                           <?php 
                              $var_date = $fab->mc_date;

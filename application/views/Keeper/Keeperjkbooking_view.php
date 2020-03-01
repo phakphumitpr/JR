@@ -253,7 +253,10 @@
                                     <div class="col-2">
 
                                     <select class="form-control" name="sj_id">
+
+
                           <?php 
+
 
 
                           

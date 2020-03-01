@@ -33,7 +33,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3"><?php echo $this->session->userdata('mem_username');?></div>
+        <div class="sidebar-brand-text mx-3"><?php echo $this->session->userdata('monk_username');?></div>
       </a>
 
       <!-- Divider -->

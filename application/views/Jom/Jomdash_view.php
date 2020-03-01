@@ -88,20 +88,11 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>พัสดุ</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <!-- <h6 class="collapse-header"></h6> -->
-            <a class="collapse-item" href="<?php echo site_url('Jom/Jommgjongpro');?>">จองพัสดุ</a>
-            <a class="collapse-item" href="<?php echo site_url('Jom/Jommgborrowpro');?>">ยืมพัสดุ</a>
-            <a class="collapse-item" href="<?php echo site_url('Jom/Jommgreturnpro');?>">คืนพัสดุ</a>
-          </div>
-        </div>
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('...');?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>....</span></a>
       </li>
 
       <!-- Divider -->
@@ -141,7 +132,7 @@
   <div class="container-fluid">
 
        <!-- 404 Error Text -->
-      <!-- <div class="text-center">
+      <div class="text-center">
       <br>
       <br>
       <br>
@@ -158,7 +149,7 @@
       <div class="error mx-auto" data-text="404">404</div>
       <p class="lead text-gray-800 mb-5">Page Not Found</p>
       <p class="lead text-gray-800 mb-5">ไม่พบหน้านี้</p>
-    </div> -->
+    </div>
 
   </div>
   <!-- /.container-fluid -->

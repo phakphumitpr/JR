@@ -187,17 +187,16 @@
                     <tbody>
                     <?php foreach ($list_monk as $fab) { ?>
                    <tr role="row">
-                       <td align="center"> <?php echo $fab->mem_id;?></td>
+                       <td align="center"> <?php echo $fab->monk_id;?></td>
                        <td>
-                            ชื่อผู้ใช้งาน : <?php echo $fab->mem_username;?>
+                            ชื่อผู้ใช้งาน : <?php echo $fab->monk_username;?>
                             <br>
-                            รหัสผ่าน : <?php echo $fab->mem_password;?></td>
+                            รหัสผ่าน : <?php echo $fab->monk_password;?></td>
                        <td>
-                            ชื่อ : <?php echo $fab->mem_name;?>
+                            ชื่อ : <?php echo $fab->monk_name;?>
                             <br>
-                            ที่อยู่ : <?php echo $fab->mem_address;?></td>
-                       <td>
-                            เบอร์ : <?php echo $fab->mem_phone;?>
+                         
+                            เบอร์ : <?php echo $fab->monk_phone;?>
                            </td>
                             <?php 
                                           if($fab->level_id === '5')
@@ -211,11 +210,11 @@
                           </td>
 
                             <td>
-                                <a href="<?php echo site_url('Keeper/Keepereditmonk/'.$fab->mem_id);?>" 
+                                <a href="<?php echo site_url('Keeper/Keepereditmonk/'.$fab->monk_id);?>" 
                                 class="btn btn-warning"> <i>แก้ไข</i></a>
                           </td>
                           <td>
-                              <a href="<?php echo site_url('Keeper/deletemonk/'.$fab->mem_id);?>" 
+                              <a href="<?php echo site_url('Keeper/deletemonk/'.$fab->monk_id);?>" 
                                 class="btn btn-danger" > <i>ลบ</i></a>
                           </td>
                    </tr>

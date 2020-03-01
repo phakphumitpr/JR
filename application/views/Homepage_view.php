@@ -203,7 +203,7 @@
                             <div class="name">รหัสผ่าน</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_password">
+                                    <input class="form-control" type="password" name="mem_password">
                                 </div>
                             </div>
                         </div>
