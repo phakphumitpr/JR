@@ -251,9 +251,12 @@
                                     </div>
 
                                     <div class="col-2">
-                                    <select class="form-control" name="sj_id" id="sj_id" >
-                                    <?php 
-                          
+
+                                    <select class="form-control" name="sj_id">
+
+ 
+                          <?php 
+        
                           $this->db->where('sj_id',$show->sj_id);
                           $query = $this->db->get('tb_statusjong');
                           $data = $query->row_array();
@@ -276,8 +279,8 @@
                         
                     <?php 
 
-                    $this->db->select('tb_member.*');
-                   $this->db->from('tb_member');
+                    $this->db->select('tb_monk.*');
+                   $this->db->from('tb_monk');
                    $this->db->where('level_id',5);
                    $query = $this->db->get();
                    $results = $query->result_array();
@@ -312,8 +315,8 @@
                   </thead>
                   <!-- <tr role="row"> -->
                   <?php ?>
-                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['mem_name'];  ?>  </td> 
-                                <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['mem_id']; ?>" ></td>                  
+                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['monk_name'];  ?>  </td> 
+                                <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['monk_id']; ?>" ></td>                  
                     </div>               
                       </div>         
                        <?php

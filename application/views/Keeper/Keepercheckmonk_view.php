@@ -185,11 +185,11 @@
                     <?php foreach ($list_monkcheck as $fab) { ?>
                    <tr role="row">
                    <?php 
-                          $this->db->where('mem_id',$fab->mem_id);
-                          $query = $this->db->get('tb_member');
+                          $this->db->where('monk_id',$fab->monk_id);
+                          $query = $this->db->get('tb_monk');
                           $data = $query->row_array();
                           ?>
-                          <td align="center" ><?php echo $data['mem_name'];?></td>
+                          <td align="center" ><?php echo $data['monk_name'];?></td>
 
                           <?php 
                              $var_date = $fab->mc_date;
@@ -256,7 +256,7 @@
               <tr>
               <tr role="row" align="center" class="info" bgcolor="#76D7C4" >
                           
-                            <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">วัน/เดือน/ปี</th>
+                            <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">ปีเดือนวัน</th>
                             <th tabindex="0" rowspan="1" colspan="1" style="width:20%;">จำนวน</th>
                           
 

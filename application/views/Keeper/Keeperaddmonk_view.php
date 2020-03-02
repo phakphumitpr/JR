@@ -185,7 +185,7 @@
                             <div class="name">ชื่อผู้ใช้งาน</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_username">
+                                    <input class="form-control" type="text" name="monk_username">
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
                             <div class="name">รหัสผ่าน</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_password">
+                                    <input class="form-control" type="text" name="monk_password">
                                 </div>
                             </div>
                         </div>
@@ -201,15 +201,7 @@
                             <div class="name">ชื่อ</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">ที่อยู่</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_address">
+                                    <input class="form-control" type="text" name="monk_name">
                                 </div>
                             </div>
                         </div>
@@ -217,7 +209,7 @@
                             <div class="name">เบอร์</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_phone">
+                                    <input class="form-control" type="text" name="monk_phone">
                                 </div>
                             </div>
                         </div>

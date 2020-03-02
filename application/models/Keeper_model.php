@@ -160,18 +160,18 @@ public function __construct(){
         {
             $this->db->select('*');
             $this->db->where('level_id','5');
-            $query = $this->db->get('tb_member');
+            $query = $this->db->get('tb_monk');
             return $query->result();
         }
  
         public function CheckKeeperaddmonk1() // ตรวจการเพิ่มข้อมูลซ้ำ เช็คจาก username
     
         {
-            $mem_username = $this->input->post('mem_username');
+            $monk_username = $this->input->post('monk_username');
             //num rows exp
-            $this->db->select('mem_username');
-            $this->db->where('mem_username',$mem_username);
-            $query = $this->db->get('tb_member');
+            $this->db->select('monk_username');
+            $this->db->where('monk_username',$monk_username);
+            $query = $this->db->get('tb_monk');
             $num = $query->num_rows(); //เช็คว่ามีข้อมูลนี้อยู่ในตารางไหม
             if($num > 0) // ถ้ามีมากกว่า 0 ขึ้นไป คือมีข้อมูลซ้ำ
             {
@@ -184,17 +184,17 @@ public function __construct(){
     
                     $data = array
                     (
-                        'mem_username'  => $this->input->post('mem_username'),
-                        'mem_password'  => $this->input->post('mem_password'),
+                        'monk_username'  => $this->input->post('monk_username'),
+                        'monk_password'  => $this->input->post('monk_password'),
                         
-                        'mem_name'      => $this->input->post('mem_name'),
-                        'mem_phone'     => $this->input->post('mem_phone'),
-                        'mem_address'   => $this->input->post('mem_address'),
+                        'monk_name'      => $this->input->post('monk_name'),
+                        'monk_phone'     => $this->input->post('monk_phone'),
+                        
                         
                         'level_id'     => '5'
     
                     );
-                    $query=$this->db->insert('tb_member',$data);
+                    $query=$this->db->insert('tb_monk',$data);
                     if($query)
                     {
                     echo "<script>"; 
@@ -216,16 +216,16 @@ public function __construct(){
         $data = array
         (
             
-            'mem_password'  => $this->input->post('mem_password'),
+            'monk_password'  => $this->input->post('monk_password'),
             
-            'mem_name'      => $this->input->post('mem_name'),
-            'mem_phone'     => $this->input->post('mem_phone'),
-            'mem_address'   => $this->input->post('mem_address'),
+            'monk_name'      => $this->input->post('monk_name'),
+            'monk_phone'     => $this->input->post('monk_phone'),
+          
             
            
         );
-        $this->db->where('mem_id',$this->input->post('mem_id'));
-        $query = $this->db->update('tb_member',$data);
+        $this->db->where('monk_id',$this->input->post('monk_id'));
+        $query = $this->db->update('tb_monk',$data);
         if($query){
            echo "<script>"; 
            echo "alert('แก้ไขข้อมูลสำเร็จ');";
@@ -241,7 +241,7 @@ public function __construct(){
 
     public function deletemonk($mem_id) // ลบสมาชิก
     {
-        $query =  $this->db->delete('tb_member',array('mem_id'=>$mem_id));
+        $query =  $this->db->delete('tb_monk',array('monk_id'=>$monk_id));
         if($query){
             echo "<script>"; 
             echo "alert('ลบข้อมูลสำเร็จ');";

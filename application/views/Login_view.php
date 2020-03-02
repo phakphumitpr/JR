@@ -44,7 +44,8 @@
                   </div>
                   <form class="user" action="<?php echo site_url('Login/checklogin');?>" method="POST">
                     <div class="form-group">
-					  <input type="text" class="form-control form-control-user" name="mem_username" placeholder="Username">
+					  <input type="text" class="form-control form-control-user" name=mem_username  placeholder="Username">
+            
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="mem_password" placeholder="Password">

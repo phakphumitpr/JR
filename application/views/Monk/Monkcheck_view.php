@@ -172,7 +172,7 @@
 
 
                         <div>
-                            <input type="hidden" name="mem_id"   value="<?php echo $this->session->userdata('mem_id');?>">
+                            <input type="hidden" name="monk_id"   value="<?php echo $this->session->userdata('monk_id');?>">
 
                             <button class="btn btn--radius-2 btn--red" type="submit">ยืนยัน</button>
                         </div>

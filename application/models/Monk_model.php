@@ -6,16 +6,16 @@ class Monk_model extends CI_Model{
         $data = array
         (
             
-            'mem_password'  => $this->input->post('mem_password'),
+            'monk_password'  => $this->input->post('monk_password'),
            
-            'mem_name'      => $this->input->post('mem_name'),
-            'mem_phone'     => $this->input->post('mem_phone'),
-            'mem_address'   => $this->input->post('mem_address'),
+            'monk_name'      => $this->input->post('monk_name'),
+            'monk_phone'     => $this->input->post('monk_phone'),
+            
             
            
         );
-        $this->db->where('mem_id',$this->input->post('mem_id'));
-        $query = $this->db->update('tb_member',$data);
+        $this->db->where('monk_id',$this->input->post('monk_id'));
+        $query = $this->db->update('tb_monk',$data);
         if($query){
            echo "<script>"; 
            echo "alert('แก้ไขข้อมูลสำเร็จ');";
@@ -43,7 +43,7 @@ class Monk_model extends CI_Model{
     $data = array(
 
         'mc_date' => $this->input->post('mc_date'),
-        'mem_id' => $this->input->post('mem_id'),   
+        'monk_id' => $this->input->post('monk_id'),   
         'dkw_id' => $qq,  
         'mc_status'   => $this->input->post('mc_status')
        
