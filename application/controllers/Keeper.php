@@ -173,16 +173,16 @@ class Keeper extends CI_Controller {
 			for ($i=0;$i<count($checkbox);$i++) {
 				$sss=array(
 					'bk_id' => $idtestt,
-					'mem_id' => $checkbox[$i]
+					'monk_id' => $checkbox[$i]
 				);
 				// $this->db->insert('tb_statusmonk',$sss);
 				
 			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
-			  $this->db->where('mem_id',$checkbox[$i]);
+			  $this->db->where('monk_id',$checkbox[$i]);
 		$data3 = array(
 		'sm_id' => '1'
 		);
-		$this->db->update('tb_member',$data3);
+		$this->db->update('tb_monk',$data3);
 		 }
 
 		$this->db->where('bk_id',$idtestt);
@@ -200,16 +200,16 @@ class Keeper extends CI_Controller {
 			$data = $query->result_array();
 			foreach ($data as $pp) { 
 	
-				$this->db->where('mem_id',$pp['mem_id']);
-				$pp2 = $this->db->get('tb_member');
+				$this->db->where('monk_id',$pp['monk_id']);
+				$pp2 = $this->db->get('tb_monk');
 				$pp1 = $pp2->row_array();
 				echo $pp1['sm_id'];
 
 				$dataaa = array(
 					'sm_id' => 0
 					);
-				$this->db->where('mem_id',$pp['mem_id']);
-				$this->db->update('tb_member',$dataaa);
+				$this->db->where('monk_id',$pp['monk_id']);
+				$this->db->update('tb_monk',$dataaa);
 				}
 		}
 
