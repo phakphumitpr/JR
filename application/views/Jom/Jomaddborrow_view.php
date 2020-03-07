@@ -18,17 +18,16 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!--input -->
-    <!-- Icons font CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+  
 
-    <!-- Vendor CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
-    <!-- Main CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/css/main.css" rel="stylesheet" media="all">  <!--input -->
+    
+
+
+
+
+   
+ 
 
 </head>
 
@@ -123,8 +122,8 @@
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
+       <!-- Sidebar Toggler (Sidebar) -->
+       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
@@ -139,30 +138,21 @@
 
   <!-- Begin Page Content -->
   <div class="container-fluid">
-
-       <!-- 404 Error Text -->
-      <!-- <div class="text-center">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <div class="error mx-auto" data-text="404">404</div>
-      <p class="lead text-gray-800 mb-5">Page Not Found</p>
-      <p class="lead text-gray-800 mb-5">ไม่พบหน้านี้</p>
-    </div> -->
-
+  <br>
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">แจ้งยืมพัสดุ</h4>
+            </div>
   </div>
   <!-- /.container-fluid -->
 
+  <div class="card-body">
+ 
+
+
+
+                </div>
 
 
 </div>
@@ -180,6 +170,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
 
   
 
@@ -201,17 +192,9 @@
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
 
 
-  <!--input -->
-    <!-- Jquery JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.js"></script>
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/moment.min.js"></script>
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/daterangepicker.js"></script>
-
-    <!-- Main JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/js/global.js"></script> <!--input -->
+  
 
 </body>
 
 </html>
+

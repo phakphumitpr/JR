@@ -11,25 +11,16 @@
 
   <title>Jom</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
+   <!-- Custom fonts for this template -->
+   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!--input -->
-    <!-- Icons font CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/css/main.css" rel="stylesheet" media="all">  <!--input -->
-
+  <!-- Custom styles for this page -->
+  <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -134,34 +125,65 @@
       <!-- Content Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
 
-<!-- Main Content -->
+    <!-- Main Content -->
 <div id="content">
 
-  <!-- Begin Page Content -->
-  <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-       <!-- 404 Error Text -->
-      <!-- <div class="text-center">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+<div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h4 class="m-0 font-weight-bold text-primary">ตารางการยืมพัสดุ <a type="button" class="btn btn-outline-primary" href="<?php echo site_url('Jom/Jomaddborrow');?>">แจ้งยืม</a></h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr role="row" class="info" bgcolor="#76D7C4" align="center">
+                    <th tabindex="0" rowspan="1" colspan="1" style="width:10%;"><h6>ลำดับ</h6></th>
+                    <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>กำหนดยืม</h6></th>
+                    <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>กำหนดคืน</h6></th>
+                    <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>สถานะ</h6></th>
+                    <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>รายละเอียด</h6></th>
+                    
+                    
+                  </tr>
+                </thead>
+                  <tbody>
+                  <?php foreach ($list_bookingprojom as $fab) { ?>
+                 <tr role="row">
+                     <td align="center">
+                          <?php echo $fab->bp_id;?>
+                      </td>
+                     <td align="center">
+                        <?php echo $fab->bp_dateborrow;?>
+                      </td>
+                     <td align="center">
+                          <?php echo $fab->bp_datereturn;?>
+                      </td>
+                     <td align="center">
+                        <?php
+                        $this->db->where('sp_id',$fab->bp_status);
+                        $query = $this->db->get('tb_statuspro');
+                        $data = $query->row_array();
+                        ?>
+                        <?php echo $data['sp_name'];?>
+                          
+                      </td>
+                          <td align="center">
+                              <a href="#" 
+                              class="btn btn-warning"> <i>ดูเพิ่ม</i></a>
+                        </td> 
+                 </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 
-      <div class="error mx-auto" data-text="404">404</div>
-      <p class="lead text-gray-800 mb-5">Page Not Found</p>
-      <p class="lead text-gray-800 mb-5">ไม่พบหน้านี้</p>
-    </div> -->
-
-  </div>
-  <!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->
 
 
 
@@ -200,17 +222,13 @@
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/chart-pie-demo.js"></script>
 
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/js/demo/datatables-demo.js"></script>
 
-  <!--input -->
-    <!-- Jquery JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.js"></script>
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/moment.min.js"></script>
-    <script src="<?php echo base_url();?>./Sathu/input/vendor/datepicker/daterangepicker.js"></script>
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Main JS-->
-    <script src="<?php echo base_url();?>./Sathu/input/js/global.js"></script> <!--input -->
 
 </body>
 

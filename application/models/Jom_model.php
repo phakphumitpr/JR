@@ -63,6 +63,15 @@ class Jom_model extends CI_Model{
         return $query->result();
     }
 
+    public function list_bookingprojom()
+    {
+        $mem_id = $_SESSION['mem_id'];
+        //  print_r($_SESSION);
+        $this->db->select('*');
+        $this->db->where('mem_id',$this->session->userdata('mem_id'));
+        $query = $this->db->get('tb_bookingpro');
+        return $query->result();
+    }
 
     public function Jomaddbooking1($data) 
     {
