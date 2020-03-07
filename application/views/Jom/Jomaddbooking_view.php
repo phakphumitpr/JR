@@ -14,8 +14,9 @@
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!-- Custom styles for this template-->
+  
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
    <!-- Custom styles for this page -->
@@ -28,12 +29,14 @@
 
     <!-- Vendor CSS-->
     <link href="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all"> -->
 
     <!-- Main CSS-->
     <link href="<?php echo base_url();?>./Sathu/input/css/main.css" rel="stylesheet" media="all">  <!--input -->
 
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>./Sathu/datetime/js/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -188,16 +191,17 @@
                             <div class="name">วันเดือนปี</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input type="date" name="bk_date" required style="width:300px;">
+                                    <input type="date" id="datetimepicker" class="form-control" name="bk_date" value="" required>
                                 </div>
                             </div>
                         </div>
+                      
 
                         <div class="form-row">
                             <div class="name">เวลางาน</div>
                             <div class="value">
                                 <div class="form-group">
-                                  <input class="form-control" type="time" name="bk_timejob" required style="width:150px;">
+                                  <input class="form-control" name="bk_timejob" id="bk_timejob"required style="width:150px;">
                                 </div>
                             </div>
                         </div>
@@ -206,7 +210,7 @@
                             <div class="name">เวลามารับพระ</div>
                             <div class="value">
                                 <div class="form-group">
-                                    <input class="form-control" type="time" name="bk_time" required style="width:150px;">
+                                    <input class="form-control" id="rantime"  name="bk_time" required style="width:150px;">
                                 </div>
                             </div>
                         </div>
@@ -226,6 +230,7 @@
                         <input type="hidden" name="sj_id"   value="1"> <!--1 คือรอดำเนินการ-->
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit">ยืนยัน</button>
+                            
                         </div>
                     </form>
                 </div>
@@ -234,7 +239,7 @@
 </div>
 <!-- End of Main Content -->
 
-    
+
 
     </div>
     <!-- End of Content Wrapper -->
@@ -247,18 +252,46 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+  <script>$(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    $('#datetimepicker').attr('min', maxDate);
+});</script>
+
+
+
+
+
   
 
 
 
-  
-
- 
 
   <!-- Bootstrap core JavaScript-->
+ 
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script type="text/javascript">
+    // $(document).ready(function() {
+        // $('#datetimepicker').datetimepicker();
+        
+    // });
+    // $('#oo').datetimepicker({
+    //  format:'Y-m-d',
+    //  timepicker:false,
+    //  minDate:'-1970/01/01', //yesterday is minimum date
+    //  maxDate:'+1970/01/03' //tomorrow is maximum date
+    //});
+</script>
   <!-- Core plugin JavaScript-->
   <script src="<?php echo base_url();?>./Sathu/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -276,7 +309,9 @@
  
   
 </body>
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./Sathu/datetime/css/jquery.datetimepicker.min.css"/>
+<script src="<?php echo base_url();?>./Sathu/datetime/js/jquery.datetimepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </html>
 <script>
     
@@ -298,4 +333,31 @@
             }
         });
     });
+</script>
+<script type="text/javascript">
+   jQuery('#bk_timejob').datetimepicker({
+  datepicker:false,
+  format:'H:i'
+});
+</script>
+<script>
+var j = 0;
+var dateend = 0;
+$('#bk_timejob').change(function(){
+    j = document.getElementById("bk_timejob").value; 
+    dateend = moment(j, 'H:i');
+    console.log( dateend.format('h:mm').toString())
+      var ga = dateend.format('h:mm').toString();
+      //var go = (dateend).add(4,'days').format('h:mm').toString();
+          jQuery('#rantime').datetimepicker({
+            format:'H:i',
+            onShow:function( ct ){
+            this.setOptions({
+              minTime:'05:00',
+              maxTime: ga,
+            }) //.val(), 10)
+            },
+            datepicker:false
+          });
+  });
 </script>

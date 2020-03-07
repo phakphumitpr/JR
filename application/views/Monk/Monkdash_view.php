@@ -81,7 +81,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('...');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Bookingmonk');?>">
           <i class="fas fa-fw fa-table"></i>
           <span>กิจนิมนต์</span></a>
       </li>

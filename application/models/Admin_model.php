@@ -142,7 +142,7 @@ class Admin_model extends CI_Model{
 
             }
     }
-
+    
         
         public function list_keeper()
         {
@@ -182,6 +182,7 @@ class Admin_model extends CI_Model{
         return FALSE;
     }
 
+    
     public function Admineditkeeper()
     {
         $data = array

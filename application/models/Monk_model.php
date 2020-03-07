@@ -66,5 +66,22 @@ class Monk_model extends CI_Model{
                
     }
 
- 
+    public function readbkmonk($monk_id) 
+        {
+        $this->db->select('*');
+        $this->db->from('tb_booking');
+        $this->db->where('monk_id',$monk_id);
+        $query = $this->db->get();
+        if($query->num_rows()>0)
+        {
+            $data = $query->row();
+            return $data;
+        }
+        return FALSE;
+    }
+
+
+
+
+
 } //ปีกสุดท้าย

@@ -239,8 +239,9 @@ public function __construct(){
        }
     }
 
-    public function deletemonk($mem_id) // ลบสมาชิก
+    public function deletemonk($monk_id) // ลบพระ
     {
+        $query =  $this->db->delete('tb_monkcheck',array('monk_id'=>$monk_id));
         $query =  $this->db->delete('tb_monk',array('monk_id'=>$monk_id));
         if($query){
             echo "<script>"; 
@@ -252,13 +253,14 @@ public function __construct(){
             echo "alert('ลบข้อมูลไม่สำเร็จ');";
             
             echo "</script>";
+
         }
     }
 
     public function list_monkcheck()
     {
-        // $this->db->select('*');
-        // $this->db->where('mc_status','1');
+        $this->db->select('*');
+        $this->db->where('mc_status',1);
         $query = $this->db->get('tb_monkcheck');
         return $query->result();
     }

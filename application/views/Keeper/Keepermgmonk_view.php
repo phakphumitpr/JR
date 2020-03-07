@@ -177,7 +177,6 @@
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>รหัส</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>ชื่อผู้ใช้งาน / รหัสผ่าน</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:25%;"><h6>ชื่อ / ที่อยู่</h6></th>
-                      <th tabindex="0" rowspan="1" colspan="1" style="width:20%;"><h6>เบอร์</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:15%;"><h6>สิทธิ์</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>แก้ไข</h6></th>
                       <th tabindex="0" rowspan="1" colspan="1" style="width:5%;"><h6>ลบ</h6></th>

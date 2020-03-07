@@ -121,7 +121,7 @@ class Keeper extends CI_Controller {
                 $this->load->view('Keeper/Keeper404_view'); //404ต้องสร้างใหม่นะ
                
             }else{
-            $data['edit']=$this->Admin_model->read($monk_id); //โชว์ข้อมูลสมาชิก
+            $data['edit']=$this->Admin_model->readm($monk_id); //โชว์ข้อมูลสมาชิก
            
             $this->load->view('Keeper/Keepereditmonk_view',$data);
     

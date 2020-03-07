@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -93,7 +93,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('...');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Bookingmonk');?>">
           <i class="fas fa-fw fa-table"></i>
           <span>กิจนิมนต์</span></a>
       </li>
@@ -149,7 +149,7 @@
                             <div class="name">วันเดือนปี</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input type="date" name="mc_date" required>
+                                    <input type="date" name="mc_date" id="datetimepicker" required>
                                 </div>
                             </div>
                         </div>
@@ -183,6 +183,20 @@
 </div>
 <!-- End of Main Content -->
 
+<script>$(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    $('#datetimepicker').attr('min', maxDate);
+});</script>
     
 
     </div>

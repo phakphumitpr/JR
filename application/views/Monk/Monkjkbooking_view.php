@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
-  <!-- Icons -->
-  <link href="<?php echo base_url(); ?>./assets2/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>./assets2/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Argon CSS -->
-  <link type="text/css" href="<?php echo base_url(); ?>./assets2/css/argon.css?v=1.1.0" rel="stylesheet">
-
-
-
-
-        
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-  <title>Keeper</title>
+  <title>Monk</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -29,18 +17,6 @@
 
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>./Sathu/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!--input -->
-    <!-- Icons font CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="<?php echo base_url();?>./Sathu/intput/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="<?php echo base_url();?>./Sathu/input/css/main.css" rel="stylesheet" media="all">  <!--input -->
 
 </head>
 
@@ -50,14 +26,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3"><?php echo $this->session->userdata('mem_username');?></div>
+        <div class="sidebar-brand-text mx-3"><?php echo $this->session->userdata('monk_username');?></div>
       </a>
 
       <!-- Divider -->
@@ -66,7 +42,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keeperdash');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Monkdash');?>">
           <i class="fas fa-fw fa-home"></i>
           <span>หน้าหลัก</span></a>
       </li>
@@ -79,7 +55,7 @@
       
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keepereditprofile');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Monkeditprofile');?>">
           <i class="fas fa-fw fa-table"></i>
           <span>ข้อมูลส่วนตัว</span></a>
       </li>
@@ -87,63 +63,27 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keepermgdaykeywat');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Monkcheck');?>">
           <i class="fas fa-fw fa-table"></i>
-          <span>งานวันสำคัญของวัด</span></a>
+          <span>เช็คชื่อรับกิจนิมนต์</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
+       <!-- Divider -->
+       <hr class="sidebar-divider my-0">
+      
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keepermgmonk');?>">
+        <a class="nav-link" href="<?php echo site_url('Monk/Bookingmonk');?>">
           <i class="fas fa-fw fa-table"></i>
-          <span>ข้อมูลพระ</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keepercheckmonk');?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>การรับกิจนิมนต์พระ</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Keeper/Keepermgbooking');?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>การจองนิมนต์พระ</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('...');?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>การจองศาลาวัด</span></a>
+          <span>กิจนิมนต์</span></a>
       </li>
 
       <!-- Divider -->
@@ -194,7 +134,7 @@
   <?php  $stringrow = base_url(uri_string());
         $arraystate = (explode("/", $stringrow));
         $idtestt = ($arraystate[6]);  ?>
-                    <form action="<?php echo site_url('Keeper/keepermanagement/'.$idtestt); ?>" method="post">
+                    <form action="<?php echo site_url('Monk/Monkmanagement/'.$idtestt); ?>" method="post">
                       
                     <div class="form-row m-b-55">
                             <div class="value">
@@ -275,43 +215,41 @@
 <?php 
 $pp = $this->db->get('tb_booking');
 $pp1 = $pp->row_array();
-?>
-                       
+
+$this->db->where('mc_date',$pp1['bk_date']);
+$oo = $this->db->get('tb_monkcheck');
+ $oo1 = $oo->row_array(); 
+ 
+ $this->db->where('monk_id',$oo1['monk_id']);
+ $ii = $this->db->get('tb_monk');
+ $ii1 = $ii->row_array();
+
+ ?>
+                        
                     <?php 
 
-                    $this->db->select('tb_monk.*');
-                   $this->db->from('tb_monk');
-                   $this->db->where('level_id',5);
-                   $query = $this->db->get();
-                   $results = $query->result_array();
-                   ?>
-	<?php	foreach ($results as $result) {
-                       ?>
-                   <?php
-
-                   $this->db->where('mem_id',$result['mem_id']);
-                   $query1 = $this->db->get('tb_booking');
-                   $results1 = $query1->row_array();
-
-                   $this->db->where('mc_date',$results1['bk_date']);
-                   $query2 = $this->db->get('tb_monkcheck');
-                   $results2 = $query2->row_array();
-
-                  //        $this->db->select('tb_member.*');
-                  //  $this->db->from('tb_member');
-                  //  $this->db->where('bk_date','2020-02-20');
+                  //  $this->db->select('tb_monk.*');
+                  //  $this->db->from('tb_monk');
+                  //  $this->db->where('level_id',5);                 
                   //  $query = $this->db->get();
                   //  $results = $query->result_array();
-
+                   $this->db->where('mc_date',$show->bk_date);
+                   $monk = $this->db->get('tb_monkcheck');
+                   $results3 = $monk->result_array();
+                   foreach ($results3 as $result2) {
+                                          
                    ?>
-                  
+
+                   <?php  $bk = $pp1['bk_date'];
+                    $mc = $oo1['mc_date']; ?>
+                   
                    <table class="table table-bordered" id="dataTable" width="10px"  cellspacing="0">
                 <thead>
                      <!-- <tr role="row" class="info" bgcolor="#76D7C4"> -->
-                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ <?php echo $results1['bk_date']; ?></th>
-                     <th <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
-                      
-                  
+                     <th class="sorting" tabindex="1" rowspan="1" colspan="1">ชื่อพระ</th>
+                     <th <?php //$hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php //} ?>class="sorting" tabindex="1" rowspan="1" colspan="1" style="width:  60px; height:50px;"></th>
+                    
+                  	
                   </thead>
                   <!-- <tr role="row"> -->
                   <?php 
@@ -321,16 +259,14 @@ $pp1 = $pp->row_array();
                   ?>
                  
                    
-                       <td> <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php if($bk == $mc){ echo $jj1['monk_name'];} ?>  </td> 
-                       <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $jj1['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $jj1['monk_id']; ?>" ></td>
+                       <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php// } ?> <?php if($bk == $mc){ echo $jj1['monk_name'];} ?>  </td> 
                        <?php	 $this->db->select('tb_monk.*');
                    $this->db->from('tb_monk');
                    $this->db->where('level_id',5);                 
                    $query = $this->db->get();
-                   $results = $query->result_array();
+                   $results = $query->row_array();
                        ?>
-                      
-                           <!-- <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $hee1['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $hee1['monk_id']; ?>" ></td>                   -->
+                           <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $results['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $results['monk_id']; ?>" ></td>                  
                     </div>   <?php } ?>            
                       </div>         
                       
