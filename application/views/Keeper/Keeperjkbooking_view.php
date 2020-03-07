@@ -346,7 +346,7 @@ $pp1 = $pp->row_array();
     
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Content Wrappegitr -->
 
   </div>
   <!-- End of Page Wrapper -->
